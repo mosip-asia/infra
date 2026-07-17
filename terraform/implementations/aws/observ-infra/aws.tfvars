@@ -79,7 +79,7 @@ enable_rancher_keycloak_integration = true
 
 # Rancher import (same as infra)
 enable_rancher_import = false  #dont enable for observ infra
-rancher_import_url    = "\"\"" #dont update for observ infra
+rancher_import_url    = "" #dont update for observ infra
 
 # Security group CIDRs
 network_cidr   = "10.0.0.0/16" # Use your actual VPC CIDR
