@@ -11,9 +11,11 @@ on:
         options:
           - dry-run
           - apply
-  push:
-    paths:
-      - Helmsman/dsf/mosip-dsf.yaml
+  # push trigger disabled on sandbox until Block 5's deploy step: every DSF-touching
+  # push is otherwise a live deployment (no branch filter). Re-enable when ready to deploy.
+  # push:
+  #   paths:
+  #     - Helmsman/dsf/mosip-dsf.yaml
 
 jobs:
   deploy:

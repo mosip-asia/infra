@@ -92,6 +92,15 @@ jobs:
         # We work in the cloud-specific implementation directory
         working-directory: 'terraform/implementations/${{ inputs.CLOUD_PROVIDER }}/${{ inputs.TERRAFORM_COMPONENT }}'
     steps:
+      - name: Fail fast when dispatched from master
+        run: |
+          # master is a pristine template tracking upstream — it has no environment
+          # secrets and its own state scope; deploys run only from the sandbox branch.
+          if [ "${{ github.ref_name }}" = "master" ]; then
+            echo "::error::never deploy from master — dispatch this workflow from the 'sandbox' branch"
+            exit 1
+          fi
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Full history needed for rebase
