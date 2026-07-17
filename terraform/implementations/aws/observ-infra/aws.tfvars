@@ -78,7 +78,7 @@ keycloak_hostname = "iam.demo.mosip.net" # example iam.sandbox.xyz.net
 enable_rancher_keycloak_integration = true
 
 # Rancher import (same as infra)
-enable_rancher_import = false #dont enable for observ infra
+enable_rancher_import = false  #dont enable for observ infra
 rancher_import_url    = "\"\"" #dont update for observ infra
 
 # Security group CIDRs
@@ -87,10 +87,10 @@ WIREGUARD_CIDR = "10.0.0.0/16" # Use your actual WireGuard VPN CIDR
 
 # PostgreSQL Configuration (used when second EBS volume is enabled)
 enable_postgresql_setup = true
-postgresql_version = "15"
-storage_device     = "/dev/nvme2n1"
-mount_point        = "/srv/postgres"
-postgresql_port    = "5433"
+postgresql_version      = "15"
+storage_device          = "/dev/nvme2n1"
+mount_point             = "/srv/postgres"
+postgresql_port         = "5433"
 
 # MOSIP Infrastructure Repository Configuration
 mosip_infra_repo_url = "https://github.com/mosip/infra.git"
