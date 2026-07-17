@@ -61,7 +61,7 @@ subdomain_internal = [
 
 # Repository configuration
 k8s_infra_repo_url = "https://github.com/mosip/k8s-infra.git"
-k8s_infra_branch   = "release-1.2.1.x"
+k8s_infra_branch   = "v1.2.1.3-rc.1"
 
 # RKE2 Version Configuration
 rke2_version = "v1.28.9+rke2r1"
@@ -93,5 +93,5 @@ mount_point             = "/srv/postgres"
 postgresql_port         = "5433"
 
 # MOSIP Infrastructure Repository Configuration
-mosip_infra_repo_url = "https://github.com/mosip/mosip-infra.git"
-mosip_infra_branch   = "v0.1.0"
+mosip_infra_repo_url = "https://github.com/mosip/infra.git"
+mosip_infra_branch   = "0.3.0-rc.1"
