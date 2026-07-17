@@ -86,11 +86,11 @@ network_cidr   = "10.0.0.0/16" # Use your actual VPC CIDR
 WIREGUARD_CIDR = "10.0.0.0/16" # Use your actual WireGuard VPN CIDR
 
 # PostgreSQL Configuration (used when second EBS volume is enabled)
-enable_postgresql_setup = false
-postgresql_version      = "15"
-storage_device          = "/dev/nvme2n1"
-mount_point             = "/srv/postgres"
-postgresql_port         = "5433"
+enable_rancher_import = false  #dont enable for observ infra
+postgresql_version = "15"
+storage_device     = "/dev/nvme2n1"
+mount_point        = "/srv/postgres"
+postgresql_port    = "5433"
 
 # MOSIP Infrastructure Repository Configuration
 mosip_infra_repo_url = "https://github.com/mosip/infra.git"
