@@ -14,7 +14,7 @@ cluster_env_domain = "demo.mosip.sandbox.cs.ait.ac.th"
 mosip_email_id = "akraradets@gmail.com"
 
 # SSH key name for AWS instances
-ssh_key_name = "mosip-aws"
+ssh_key_name = "mosip-demo-key"
 
 # AWS region
 aws_provider_region = "ap-south-1"
