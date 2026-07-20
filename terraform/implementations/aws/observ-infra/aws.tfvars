@@ -11,7 +11,7 @@ cluster_name = "observe-demo"
 cluster_env_domain = "demo.mosip.sandbox.cs.ait.ac.th"
 
 # Email-ID for SSL certificate notifications
-mosip_email_id = "chandra.mishra@technoforte.co.in"
+mosip_email_id = "akraradets@gmail.com"
 
 # SSH key name for AWS instances
 ssh_key_name = "mosip-aws"
