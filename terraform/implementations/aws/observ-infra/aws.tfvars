@@ -38,7 +38,7 @@ nginx_instance_type = "t3a.large"
 ami = "ami-0ad21ae1d0696ad58"
 
 # Route53 zone ID for DNS records
-zone_id = "Z090954828SJIEL6P5406"
+zone_id = "Z02734672VNDZCOJ5S9L4"
 
 # VPC name (should match the one created by base-infra)
 vpc_name = "mosip-boxes-demo"
