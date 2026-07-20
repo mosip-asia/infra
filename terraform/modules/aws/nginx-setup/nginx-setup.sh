@@ -64,9 +64,12 @@ else
 fi
 
 echo "[ Generate SSL certificates from letsencrypt for $cert_type ] : "
-# Removed the wildcard flag (*.) to comply with the parent CAA policy
-sudo certbot certonly --dns-route53 $domain_args --non-interactive --agree-tos --email "$certbot_email"
 
+# Generates the non-wildcard certificates AND forces the folder name to match ${cluster_env_domain}
+sudo certbot certonly --dns-route53 \
+  --cert-name "${cluster_env_domain}" \
+  $domain_args \
+  --non-interactive --agree-tos --email "$certbot_email"
 
 ## start and enable Nginx
 #echo "[ Start & Enable nginx ] : "
