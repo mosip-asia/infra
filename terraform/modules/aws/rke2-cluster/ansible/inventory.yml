@@ -16,7 +16,7 @@ all:
     control_plane:
       hosts:
         observe-demo-CONTROL-PLANE-NODE-1:
-          ansible_host: 10.0.4.82
+          ansible_host: 10.0.4.90
           node_role: control_plane
           is_primary: true
           node_index: 0
