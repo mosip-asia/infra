@@ -8,7 +8,7 @@ cloud_provider = "aws"
 cluster_name = "observe-demo"
 
 # MOSIP domain
-cluster_env_domain = "demo.mosip.net"
+cluster_env_domain = "demo.mosip.sandbox.cs.ait.ac.th"
 
 # Email-ID for SSL certificate notifications
 mosip_email_id = "chandra.mishra@technoforte.co.in"
@@ -67,12 +67,12 @@ k8s_infra_branch   = "v1.2.1.3-rc.1"
 rke2_version = "v1.28.9+rke2r1"
 
 # Rancher UI configuration (hostname will be dynamically created from cluster_env_domain)
-rancher_hostname           = "rancher.demo.mosip.net" # example rancher.sandbox.xyz.net
+rancher_hostname           = "rancher.mosip.sandbox.cs.ait.ac.th" # example rancher.sandbox.xyz.net
 rancher_bootstrap_password = "admin"
 rancher_ui_version         = "2.8.3" # Rancher Helm chart version (avoid 2.8.3 due to CVEs)
 
 # Keycloak configuration (hostname will be dynamically created from cluster_env_domain)  
-keycloak_hostname = "iam.demo.mosip.net" # example iam.sandbox.xyz.net
+keycloak_hostname = "iam.mosip.sandbox.cs.ait.ac.th" # example iam.sandbox.xyz.net
 
 # Enable Rancher-Keycloak integration for observability cluster
 enable_rancher_keycloak_integration = true
