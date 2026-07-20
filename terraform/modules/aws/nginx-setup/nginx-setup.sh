@@ -42,13 +42,31 @@ sudo apt update
 sudo apt-get install letsencrypt certbot python3-certbot-nginx python3-certbot-dns-route53 -y
 
 ## Get ssl certificate automatically
+###### Old Version with wildcard certs #######
+# if [ "$NGINX_TYPE" == "mosip" ]; then
+#   cert_type="MOSIP"
+# else
+#   cert_type="Observability"
+# fi
+# echo "[ Generate SSL certificates from letsencrypt for $cert_type ] : "
+# sudo certbot certonly --dns-route53 -d "*.${cluster_env_domain}" -d "${cluster_env_domain}" --non-interactive --agree-tos --email "$certbot_email"
+
+####### New Version without wildcard certs #######
+## Get ssl certificate automatically
 if [ "$NGINX_TYPE" == "mosip" ]; then
   cert_type="MOSIP"
+  # Modify these if your main MOSIP landing domains differ
+  domain_args="-d rancher.${cluster_env_domain} -d iam.${cluster_env_domain}"
 else
   cert_type="Observability"
+  # Explicitly define the subdomains needed for Observability/Rancher UI
+  domain_args="-d rancher.${cluster_env_domain} -d iam.${cluster_env_domain}"
 fi
+
 echo "[ Generate SSL certificates from letsencrypt for $cert_type ] : "
-sudo certbot certonly --dns-route53 -d "*.${cluster_env_domain}" -d "${cluster_env_domain}" --non-interactive --agree-tos --email "$certbot_email"
+# Removed the wildcard flag (*.) to comply with the parent CAA policy
+sudo certbot certonly --dns-route53 $domain_args --non-interactive --agree-tos --email "$certbot_email"
+
 
 ## start and enable Nginx
 #echo "[ Start & Enable nginx ] : "
