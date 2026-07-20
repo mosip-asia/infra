@@ -32,7 +32,7 @@ k8s_worker_node_count        = 0
 
 # Minimal instance types for observability
 k8s_instance_type   = "t3a.2xlarge"
-nginx_instance_type = "t3a.large"
+nginx_instance_type = "t3a.2xlarge"
 
 # AMI ID (Ubuntu 24.04 LTS in ap-south-1)
 ami = "ami-0ad21ae1d0696ad58"
