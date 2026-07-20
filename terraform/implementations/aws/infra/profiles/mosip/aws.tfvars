@@ -15,7 +15,7 @@ cluster_env_domain = "demoinfra.mosip.net"
 mosip_email_id = "thisisbn46@gmail.com"
 
 # SSH login key name for AWS node instances (ex: my-ssh-key)
-ssh_key_name = "mosip-aws"
+ssh_key_name = "mosip-demo-key"
 
 # The AWS region for resource creation
 aws_provider_region = "ap-south-1"
