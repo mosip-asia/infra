@@ -12,7 +12,7 @@ jumpserver_name = "Wireguard-demo"
 mosip_email_id = "chandra.mishra@technoforte.co.in"
 
 # SSH key name for AWS instances
-ssh_key_name = "mosip-aws"
+ssh_key_name = "mosip-demo-key"
 
 # AWS region
 aws_provider_region = "ap-south-1"
