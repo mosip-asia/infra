@@ -101,43 +101,17 @@ if [ "$NGINX_TYPE" == "observability" ] && [ ! -z "${observation_nginx_certs:-}"
   echo "[ Escaped cert path: $observation_nginx_certs ] : "
   echo "[ Escaped key path: $observation_nginx_cert_key ] : "
 fi
-# Function to print diagnostics on error
-handle_failure() {
-  echo "======================================================"
-  echo "         [ ERROR: NGINX SETUP FAILED ]               "
-  echo "======================================================"
-  echo "--- [ 1. Nginx Configuration Check ] ---"
-  sudo nginx -t 2>&1
-
-  echo "--- [ 2. Recent Systemd Journal Logs ] ---"
-  sudo journalctl -xeu nginx.service -n 50 --no-pager
-
-  echo "--- [ 3. Last 50 Lines of Error Log ] ---"
-  sudo tail -n 50 /var/log/nginx/error.log 2>/dev/null || echo "No error log found"
-  echo "======================================================"
-  exit 1
-}
-
-# Trap any unhandled error signals automatically
-trap 'handle_failure' ERR
 
 echo "[ Running NGINX install script from $nginx_location ] : "
+sudo -E ./install.sh
 
-# Navigate safely to the script directory
-cd "$nginx_location" || {
-  echo "[ ERROR: Directory $nginx_location not found ]"
-  handle_failure
-}
-
-# Run the MOSIP Nginx installation script
-if ! sudo -E ./install.sh; then
-  handle_failure
-fi
-
-# Run final configuration test
+# Check if nginx configuration is valid
 echo "[ Testing NGINX configuration ] : "
-if ! sudo nginx -t 2>&1; then
-  handle_failure
+if ! sudo nginx -t; then
+  echo "[ ERROR: NGINX configuration test failed ] : "
+  echo "[ Showing NGINX error log ] : "
+  sudo tail -50 /var/log/nginx/error.log || echo "No error log found"
+  exit 1
 fi
 
 echo "[ NGINX setup completed successfully ] : "

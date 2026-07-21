@@ -40,10 +40,10 @@ zone_id = "Z02734672VNDZCOJ5S9L4"
 ami = "ami-0ad21ae1d0696ad58"
 
 # Repo K8S-INFRA URL
-k8s_infra_repo_url = "https://github.com/mosip/k8s-infra.git"
+k8s_infra_repo_url = "https://github.com/mosip-asia/k8s-infra.git"
 
 # Repo K8S-INFRA branch
-k8s_infra_branch = "v1.2.1.3-rc.1"
+k8s_infra_branch = "demo"
 
 # NGINX Node's Root volume size
 nginx_node_root_volume_size = 24
