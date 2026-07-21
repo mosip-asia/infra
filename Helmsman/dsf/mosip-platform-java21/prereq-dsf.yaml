@@ -92,7 +92,7 @@ apps:
 
   rancher-logging-crd:
     namespace: cattle-logging-system
-    enabled: false
+    enabled: true
     version: 103.1.1+up4.4.0
     chart: mosip/rancher-logging-crd
     wait: true
