@@ -33,8 +33,8 @@ apps:
     timeout: 900
     priority: -6
     hooks:
-      postInstall: "$WORKDIR/hooks/install-istio-and-httpbin.sh demoinfra helmsman"
-      postUpgrade: "$WORKDIR/hooks/install-istio-and-httpbin.sh demoinfra helmsman"
+      postInstall: "$WORKDIR/hooks/install-istio-and-httpbin.sh ${domain_name} ${env_name}"
+      postUpgrade: "$WORKDIR/hooks/install-istio-and-httpbin.sh ${domain_name} ${env_name}"
 
   rancher-monitoring:
     namespace: cattle-monitoring-system
@@ -92,7 +92,7 @@ apps:
 
   rancher-logging-crd:
     namespace: cattle-logging-system
-    enabled: true
+    enabled: false
     version: 103.1.1+up4.4.0
     chart: mosip/rancher-logging-crd
     wait: true
