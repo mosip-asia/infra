@@ -9,7 +9,7 @@
 cluster_name = "demoinfra"
 
 # MOSIP's domain (ex: sandbox.xyz.net)
-cluster_env_domain = "demoinfra.mosip.sandbox.cs.ait.ac.th"
+cluster_env_domain = "demoinfra.demo.mosip.sandbox.cs.ait.ac.th"
 
 # Email-ID will be used by certbot to notify SSL certificate expiry via email
 mosip_email_id = "akraradets@gmail.com"
