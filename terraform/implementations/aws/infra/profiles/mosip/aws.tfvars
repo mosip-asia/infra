@@ -9,10 +9,10 @@
 cluster_name = "demoinfra"
 
 # MOSIP's domain (ex: sandbox.xyz.net)
-cluster_env_domain = "demoinfra.mosip.net"
+cluster_env_domain = "demoinfra.mosip.sandbox.cs.ait.ac.th"
 
 # Email-ID will be used by certbot to notify SSL certificate expiry via email
-mosip_email_id = "thisisbn46@gmail.com"
+mosip_email_id = "akraradets@gmail.com"
 
 # SSH login key name for AWS node instances (ex: my-ssh-key)
 ssh_key_name = "mosip-demo-key"
@@ -24,7 +24,7 @@ aws_provider_region = "ap-south-1"
 # If empty, uses all available AZs in the region
 # Example: ["ap-south-1a", "ap-south-1b"] for specific AZs
 # Example: [] for all available AZs in the region
-specific_availability_zones = ["ap-south-1a", "ap-south-1b"]
+specific_availability_zones = ["ap-south-1b"]
 
 # The instance type for Kubernetes nodes (control plane, worker, etcd)
 k8s_instance_type = "t3a.2xlarge"
@@ -33,7 +33,7 @@ k8s_instance_type = "t3a.2xlarge"
 nginx_instance_type = "t3a.2xlarge"
 
 # The Route 53 hosted zone ID
-zone_id = "Z090954828SJIEL6P5406"
+zone_id = "Z02734672VNDZCOJ5S9L4"
 
 ## UBUNTU 24.04
 # The Amazon Machine Image ID for the instances
@@ -77,7 +77,7 @@ WIREGUARD_CIDR = "10.0.0.0/16" # Use your actual WireGuard VPN CIDR
 # Rancher Import URL
 # Rancher Import Configuration
 enable_rancher_import = true
-rancher_import_url    = "\"kubectl apply -f https://rancher.demo.mosip.net/v3/import/fbg4bc8fbdtwlz47tf6tqsmpkltbbknwp6v5wlzcmvk8cpgckdgghm_c-m-lcwq6dvm.yaml\""
+rancher_import_url    = "\"kubectl apply -f https://rancher.demo.mosip.sandbox.cs.ait.ac.th/v3/import/fbg4bc8fbdtwlz47tf6tqsmpkltbbknwp6v5wlzcmvk8cpgckdgghm_c-m-lcwq6dvm.yaml\""
 
 # DNS Records to map
 subdomain_public   = ["resident", "prereg", "esignet", "healthservices", "signup"]
@@ -91,7 +91,7 @@ mount_point             = "/srv/postgres"
 postgresql_port         = "5433"
 
 # MOSIP Infrastructure Repository Configuration
-mosip_infra_repo_url = "https://github.com/mosip/infra.git"
+mosip_infra_repo_url = "https://github.com/mosip-asia/infra.git"
 
 mosip_infra_branch = "demo"
 
